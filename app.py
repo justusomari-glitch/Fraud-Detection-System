@@ -44,8 +44,7 @@ def predict_fraud_activity (data:FraudData):
         status="Legitimate Transaction"
 
     return{
-        "fraud_probability": float(proba),
-        "threshold": threshold,
+        "fraud_probability": float(proba).round(),
         "is_fraud": status
     }
 
