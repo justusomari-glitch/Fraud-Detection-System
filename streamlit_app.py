@@ -39,14 +39,22 @@ with st.form(key="fraud_predictions"):
     submit_button=st.form_submit_button(label="Evauate Transaction")
     if submit_button:
         input_data={
-            'transaction_amount'=form_values['Transaction Amount'],
-            'account_age'=form_values['Account Age'],
-            'transactions_last_1h'=form_values['Transactions In the last Hour'],
-            'transactions_last_24h'=form_values['Transactions In the last 24Hours'],
-            'payment_method'=form_values['Payment Method'],
-            'device_type'=form_values['Device Type'],
-            'transaction_hour'=form_values['Transaction Hour'],
-            'is_international'=form_values['Is Account International'],
-            'previous_fraud_flag'=form_values['Previous fraud flag']
+            'transaction_amount':form_values['Transaction Amount'],
+            'account_age':form_values['Account Age'],
+            'transactions_last_1h':form_values['Transactions In the last Hour'],
+            'transactions_last_24h':form_values['Transactions In the last 24Hours'],
+            'payment_method':form_values['Payment Method'],
+            'device_type':form_values['Device Type'],
+            'transaction_hour':form_values['Transaction Hour'],
+            'is_international':form_values['Is Account International'],
+            'previous_fraud_flag':form_values['Previous fraud flag']
               }
+        url="https://fraud-detection-system-74kc.onrender.com/predict"
+        respone=requests.post(url,json=input_data)
+        transaction_evaluation=respone.json()
+        prediction=transactions.get("Fraud")
+        st.write(f"### Transaction Evaluation: {prediction}")
+        
+        
+
 
