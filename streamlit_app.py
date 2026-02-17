@@ -52,9 +52,11 @@ with st.form(key="fraud_predictions"):
         url="https://fraud-detection-system-74kc.onrender.com/predict"
         respone=requests.post(url,json=input_data)
         transaction_evaluation=respone.json()
-        prediction=transactions.get("Fraud")
-        st.write(f"### Transaction Evaluation: {prediction}")
+        prediction=transaction_evaluation.get("Fraud")
+        st.write(f"### Transaction Evaluation Results: {prediction}")
         
+        
+
         
 
 
