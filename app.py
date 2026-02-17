@@ -22,7 +22,7 @@ def home():
 
 class FraudData(BaseModel):
     account_age_days: int
-    transaction_anount: float
+    transaction_amount: float
     transaction_hour: int
     is_international: int
     transaction_last_1h: int
