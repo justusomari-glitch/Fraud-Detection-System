@@ -38,10 +38,15 @@ def predict_fraud_activity (data:FraudData):
     proba=model.predict_proba(input_df)[0][1]
     prediction=int(proba>=threshold)
 
+    if prediction==1:
+        status="Fraudulent Transaction"
+    else:
+        status="Legitimate Transaction"
+
     return{
         "fraud_probability": float(proba),
         "threshold": threshold,
-        "is_fraud": prediction
+        "is_fraud": status
     }
 
 
