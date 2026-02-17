@@ -40,7 +40,7 @@ with st.form(key="fraud_predictions"):
     if submit_button:
         input_data={
             'transaction_amount':form_values['Transaction Amount'],
-            'account_age':form_values['Account Age'],
+            'account_age_days':form_values['Account Age'],
             'transactions_last_1h':form_values['Transactions In the last Hour'],
             'transactions_last_24h':form_values['Transactions In the last 24Hours'],
             'payment_method':form_values['Payment Method'],
@@ -50,11 +50,10 @@ with st.form(key="fraud_predictions"):
             'previous_fraud_flag':form_values['Previous fraud flag']
               }
         url="https://fraud-detection-system-74kc.onrender.com/predict"
-        respone=requests.post(url,json=input_data)
-        transaction_evaluation=respone.json()
-        prediction=transaction_evaluation.get("Fraud")
-        st.write(f"### Transaction Evaluation Results: {prediction}")
+        response=requests.post(url,json=input_data,timeout=30)
         
+        st.write(response)
+
         
 
         
