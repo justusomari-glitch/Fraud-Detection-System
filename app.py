@@ -35,7 +35,7 @@ class FraudData(BaseModel):
 def predict_fraud_activity (data:FraudData):
     input_dic=data.model_dump()
     input_df=pd.DataFrame([input_dic])
-    proba=model.predict_proba(input_df)[0][1]
+    proba=model.predict_proba(input_df)[0][1].round(2)
     prediction=int(proba>=threshold)
 
     if prediction==1:
@@ -44,7 +44,7 @@ def predict_fraud_activity (data:FraudData):
         status="Legitimate Transaction"
 
     return{
-        "fraud_probability": float(proba).round(),
+        "fraud_probability": float(proba),
         "is_fraud": status
     }
 
