@@ -31,7 +31,7 @@ class FraudData(BaseModel):
     payment_method: str
     device_type: str
 
-@app.host("/predict/Fraud Activity")
+@app.post("/predict/Fraud Activity")
 def predict_fraud_activity (data:FraudData):
     input_dic=data.model_dump
     input_df=pd.DataFrame([input_dic])
