@@ -49,10 +49,12 @@ with st.form(key="fraud_predictions"):
             'is_international':form_values['Is Account International'],
             'previous_fraud_flag':form_values['Previous fraud flag']
               }
-        url="https://fraud-detection-system-74kc.onrender.com/predict"
+        url="https://fraud-detection-system-6jvs.onrender.com/predict"
         response=requests.post(url,json=input_data,timeout=30)
         
-        st.write(response)
+        result=(response.json())
+        st.write(f"### Evaluation Result: {result["is_fraud"]}")
+        st.write(f"### Probability: {result["fraud_probability"]*100}%")
 
         
 
