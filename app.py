@@ -51,8 +51,7 @@ def predict_fraud_activity (data:FraudData):
     return{
         "fraud_probability": float(proba),
         "is_fraud": status
-    }
-
+    } 
 
 
 
