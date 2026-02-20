@@ -36,7 +36,7 @@ with st.form(key="fraud_predictions"):
     form_values['Is Account International']=st.checkbox("Is the account International:")
     form_values['Previous fraud flag']=st.checkbox("Has the account been flagged for fraud before?:")
     st.divider()
-    submit_button=st.form_submit_button(label="Evauate Transaction")
+    submit_button=st.form_submit_button(label="Evaluate Transaction")
     if submit_button:
         input_data={
             'transaction_amount':form_values['Transaction Amount'],
