@@ -5,8 +5,13 @@ from fastapi import FastAPI
 
 app=FastAPI()
 bundle=joblib.load("fraud_pipeline.pkl")
+bundle["threshold"]=0.25
+bundle=joblib.dump(bundle,"fraud_pipeline.pkl")
+bundle=joblib.load("fraud_pipeline.pkl")
 model=bundle["model"]
 threshold=bundle["threshold"]
+print("updated threshold",bundle["threshold"])
+
 
 print("loaded threshold:",threshold)
 print("loaded model:",type(model))
