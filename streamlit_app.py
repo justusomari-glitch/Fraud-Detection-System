@@ -55,7 +55,8 @@ with st.form(key="fraud_predictions"):
         result=(response.json())
         st.write(f"### Evaluation Result: {result["is_fraud"]}")
         st.write(f"### Probability: {result["fraud_probability"]*100}%")
-st.write("Threshold in use",threshold)
+st.write("Threshold in use")
+
         
 
         
