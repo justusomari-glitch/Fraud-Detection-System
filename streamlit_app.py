@@ -49,7 +49,7 @@ with st.form(key="fraud_predictions"):
             'is_international':form_values['Is Account International'],
             'previous_fraud_flag':form_values['Previous fraud flag']
               }
-        url="https://fraud-detection-system-6jvs.onrender.com/predict"
+        url="https://fraud-detection-system-s0oz.onrender.com/predict"
         response=requests.post(url,json=input_data,timeout=30)
         
         result=(response.json())
