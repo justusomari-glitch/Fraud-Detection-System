@@ -26,9 +26,9 @@ form_values={
 }
 
 with st.form(key="fraud_predictions"):
-    form_values['Transaction Amount']=st.number_input("Amount Transacted:",min_value=5)
-    form_values['Transaction Hour']=st.number_input("Transaction Hour:",min_value=5)
-    form_values['Account Age']=st.number_input("Account Age:",min_value=5)
+    form_values['Transaction Amount']=st.number_input("Amount Transacted:",min_value=1)
+    form_values['Transaction Hour']=st.number_input("Transaction Hour:",min_value=1)
+    form_values['Account Age']=st.number_input("Account Age:",min_value=1)
     form_values['Transactions In the last Hour']=st.number_input("Number of transactions in the last hour:",min_value=1)
     form_values['Transactions In the last 24Hours']=st.number_input("Number of transactions in the last 24hours:",min_value=2)    
     form_values['Payment Method']=st.selectbox("Payment Methods:",payment_method)
