@@ -10,6 +10,6 @@ jobs:
        runs-on: ubuntu-latest
        steps:
         - name: Print Hello
-          run: npm Tests
-          
+          run: npm test
+
 
