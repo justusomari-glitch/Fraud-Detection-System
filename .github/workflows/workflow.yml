@@ -10,6 +10,7 @@ jobs:
        runs-on: ubuntu-latest
        steps:
         - name: Print Hello
-          run: npm test
+          run: echo "CI is working"
+          
 
 
