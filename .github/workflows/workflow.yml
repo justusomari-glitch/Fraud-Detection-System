@@ -22,7 +22,7 @@ jobs:
         - name: Look at the basic Syntax
           run: python -m py_compile app.py
         - name: Run Tests
-          run: pytest -q
+          run: python -m pytest -q
           
 
 
