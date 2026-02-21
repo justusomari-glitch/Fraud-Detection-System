@@ -21,7 +21,7 @@ jobs:
               pip install -r requirements.txt
            - name: Look at basic syntax
              run : |
-              python -m py-compile app.py
+              python -m py_compile app.py
            - name : Run Tests
              run : pytest -q
         
